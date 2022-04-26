@@ -1,0 +1,8 @@
+name: ioos-qc-front-end
+channels:
+  - defaults
+dependencies:
+  - jupyter_bokeh
+  - pyctdev[version='>0.5.0']
+  - panel
+prefix: /usr/local/anaconda3/envs/ioos-qc-front-end
