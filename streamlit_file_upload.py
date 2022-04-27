@@ -1,4 +1,3 @@
-from numpy import empty
 import streamlit as st
 import pandas as pd
 import json
@@ -46,7 +45,7 @@ if uploaded_file is not None:
     
      if st.button(label='Run Tests'):
          write_config(config)
-         result = run_test.run_tests(df, selected_column, config, 'test_output.csv')
+         result = run_test.run_tests(df, selected_column, config)
     
          if not result.empty:
             results_csv = convert_df(result)
