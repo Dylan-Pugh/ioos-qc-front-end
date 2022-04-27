@@ -1,8 +1,14 @@
 import streamlit as st
 import pandas as pd
 import json
+import run_test
 
 config_file_path = "qc_config.json"
+
+def write_config(config_to_write):
+    with open (config_file_path, 'w') as out_file:
+        json.dump(config_to_write, out_file)
+
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
      # Can be used wherever a "file-like" object is accepted:
@@ -31,4 +37,8 @@ if uploaded_file is not None:
                  values = st.slider(label=current_param, value=test_config[current_param])
                  #st.write(values)
                  config['qartod'][selected_test][current_param] = values
-                 #st.write(config)    
+                 #st.write(config)
+    
+     if st.button(label='Run Tests'):
+         write_config(config)
+         run_test.run_tests(df, selected_column, config, 'test_output.csv')
