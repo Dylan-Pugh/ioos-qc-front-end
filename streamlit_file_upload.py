@@ -38,7 +38,11 @@ if uploaded_file is not None:
      with st.expander(label=test_label, expanded=True):
          for current_param in test_config.keys():
              if isinstance(test_config[current_param], list):
-                 values = st.slider(label=current_param, value=test_config[current_param])
+                 upper_bound = st.number_input(label='Upper bound', value=max(test_config[current_param]))
+                 lower_bound = st.number_input(label='Lower bound', value=min(test_config[current_param]))
+                 range = [upper_bound, lower_bound]
+
+                 values = st.slider(label=current_param, value=range)
                  #st.write(values)
                  config['qartod'][selected_test][current_param] = values
                  #st.write(config)
@@ -48,6 +52,7 @@ if uploaded_file is not None:
          result = run_test.run_tests(df, selected_column, config)
     
          if not result.empty:
+            st.success('Processing successful.')
             results_csv = convert_df(result)
 
             st.download_button(
