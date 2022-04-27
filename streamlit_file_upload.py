@@ -13,6 +13,8 @@ def write_config(config_to_write):
 def convert_df(df):
     return df.to_csv().encode('utf-8')
 
+st.title("IOOS QC Web Application")
+
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
      # Can be used wherever a "file-like" object is accepted:
