@@ -9,4 +9,5 @@ dependencies:
   - pyctdev
   - panel
   - ioos_qc
+  - streamlit
 prefix: /usr/local/anaconda3/envs/ioos-qc-front-end

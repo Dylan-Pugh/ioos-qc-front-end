@@ -12,7 +12,7 @@ and then activate the new environment:
 conda activate ioos-qc-front-end
 ```
 
-To launch the Panel app:
+To launch the Streamlit app:
 ```
-panel serve file_input.py --show  
+streamlit run streamlit_file_upload.py 
 ```
