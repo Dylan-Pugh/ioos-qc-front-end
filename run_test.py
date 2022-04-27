@@ -20,6 +20,5 @@ def run_tests(input_data, input_variable, qc_config, output_path):
 
     qc_result_pd = pd.DataFrame(qc_results["qartod"], columns=qc_results["qartod"].keys())
     result = pd.concat([input_data, qc_result_pd], axis=1)
-    result.to_csv(output_path)
 
-    print("Done")
+    return result

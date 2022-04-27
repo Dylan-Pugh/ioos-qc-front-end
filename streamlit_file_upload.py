@@ -1,3 +1,4 @@
+from numpy import empty
 import streamlit as st
 import pandas as pd
 import json
@@ -8,6 +9,10 @@ config_file_path = "qc_config.json"
 def write_config(config_to_write):
     with open (config_file_path, 'w') as out_file:
         json.dump(config_to_write, out_file)
+
+@st.cache
+def convert_df(df):
+    return df.to_csv().encode('utf-8')
 
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
@@ -41,4 +46,14 @@ if uploaded_file is not None:
     
      if st.button(label='Run Tests'):
          write_config(config)
-         run_test.run_tests(df, selected_column, config, 'test_output.csv')
+         result = run_test.run_tests(df, selected_column, config, 'test_output.csv')
+    
+         if not result.empty:
+            results_csv = convert_df(result)
+
+            st.download_button(
+                label="Download data as CSV",
+                data=results_csv,
+                file_name='results.csv',
+                mime='text/csv',
+            )
