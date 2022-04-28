@@ -15,6 +15,8 @@ def convert_df(df):
 
 st.title("IOOS QC Web Application")
 
+st.markdown('[Example Water Level Test File](https://github.com/Dylan-Pugh/ioos-qc-front-end/blob/main/water_level_example_test.csv)')
+
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
      # Can be used wherever a "file-like" object is accepted:
@@ -22,6 +24,8 @@ if uploaded_file is not None:
 
      with st.expander(label='Dataset Preview', expanded=True):
         st.write(df.head())
+    
+     st.markdown('Select **sea_surface_height_above_sea_level** if you are using Example Water Level Test File')
     
      selected_column = st.selectbox(label='Select Input Variable', options=df.columns)
 
