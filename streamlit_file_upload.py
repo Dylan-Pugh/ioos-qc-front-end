@@ -25,7 +25,7 @@ if uploaded_file is not None:
      with st.expander(label='Dataset Preview', expanded=True):
         st.write(df.head())
     
-    st.markdown('Select **sea_surface_height_above_sea_level** if you are using Example Water Level Test File')
+     st.markdown('Select **sea_surface_height_above_sea_level** if you are using Example Water Level Test File')
     
      selected_column = st.selectbox(label='Select Input Variable', options=df.columns)
 
