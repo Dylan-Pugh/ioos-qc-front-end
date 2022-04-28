@@ -33,3 +33,12 @@ streamlit run streamlit_file_upload.py
 5. Choose test range, leave default numbers for the example
 6. Click run test
 7. Download CSV file
+
+## Next Steps for Continuing Development
+1. Refactor code to increase extensibility
+2. Error handling
+3. Support for additional tests
+4. Support for selecting multiple tests
+5. Interactive range selection based on input data
+6. Improve general documentation
+
