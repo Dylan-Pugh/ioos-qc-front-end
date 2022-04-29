@@ -15,7 +15,13 @@ def convert_df(df):
 
 st.title("IOOS QC Web Application")
 
-st.markdown('[Example Water Level Test File](https://github.com/Dylan-Pugh/ioos-qc-front-end/blob/main/water_level_example_test.csv)')
+st.markdown('This free open source app was initially built during [IOOS Code Sprint 2022](https://ioos.github.io/ioos-code-sprint/topics/07-ioos-qc-non-programmers/).')
+
+st.markdown('If you wish to run the code locally or contribute to this app, please check out our repository: [ioos qc front end](https://github.com/Dylan-Pugh/ioos-qc-front-end).')
+
+st.markdown('If you have any questions or comments on this app, please submit them [here as a new issue](https://github.com/Dylan-Pugh/ioos-qc-front-end/issues).')
+
+st.markdown('[Example Water Level Test File](https://github.com/Dylan-Pugh/ioos-qc-front-end/raw/main/water_level_example_test.csv)')
 
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
