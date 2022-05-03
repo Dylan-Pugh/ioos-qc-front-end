@@ -1,8 +1,6 @@
 name: ioos-qc-front-end
 channels:
-  - defaults
   - conda-forge
 dependencies:
   - ioos_qc
   - streamlit
-prefix: /usr/local/anaconda3/envs/ioos-qc-front-end
